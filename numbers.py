@@ -12,6 +12,20 @@ print('The integer numbers (e.g. 2, 4, 20) have type int, the ones with a fracti
 
 print('Use // to return an int instead of float when dividing numbers. (fractional result will be disgarded)')
 
-print('(50 - 5*6) // 4 now retuns:')
+print('(50 - 5*6) // 4 now returns:')
 
 print((50 - 5*6) // 4)
+
+print('The % operator returns the remainder of division')
+
+print('ex: 17 % 3 =', 17%3)
+
+print('With Python, it is possible to use the ** operator to calculate powers')
+
+print('5 ** 2 (e.g. 5 squared) =',5 ** 2)
+
+print('= is used for variable assignment')
+
+print('operators wit hmixed-type operands will return a floating point')
+
+print('so 5 * 6 / 10 = ',5 * 6 / 10)
