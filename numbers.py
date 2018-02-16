@@ -26,6 +26,8 @@ print('5 ** 2 (e.g. 5 squared) =',5 ** 2)
 
 print('= is used for variable assignment')
 
-print('operators wit hmixed-type operands will return a floating point')
+print('operators with mixed-type operands will return a floating point')
 
 print('so 5 * 6 / 10 = ',5 * 6 / 10)
+
+print('In interactive mode, the last printed expression is assigned to the variable _. This means that when you are using Python as a desk calculator, it is somewhat easier to continue calculations')
