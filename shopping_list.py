@@ -1,10 +1,10 @@
 def shopping():
     shopping_list = []
     item = ''
-    while item != None:
+    while True:
         item = input("What would you like to add to your shopping list? type 'DONE' to finish ")
         if item == 'DONE':
-            item = None
+            break
         else:
             shopping_list.append(item)
             print(f'{item} added to the cart')
