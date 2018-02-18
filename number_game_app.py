@@ -12,16 +12,26 @@ def eval_guess(num1,num2):
 def game():
     num = rand_num()
     print('I\'m thinking of a number between 1 and 10')
-    count = 0
-    while True:
-        guess = int(input('What\'s the number? '))
-        count += 1
+    count = 3
+    while count > 0:
+
+        try:
+            guess = int(input(f'What\'s the number? ({count} guesses remaining) '))
+        except ValueError:
+            print('That\'s not a number!')
+            continue
+
+        count -= 1
         if guess == num:
-            print(f'That\'s right! The correct number is {num}')
+            print(f'That\'s right! The correct number is {num} ')
             break
         else:
             eval_guess(num, guess)
 
-    print(f'It took you {count} guesses to get the right number')
+    play = input('Do you want to play again? y/n ')
+    if play == 'y':
+        game()
+    else:
+        return
 
 game()
