@@ -30,3 +30,38 @@ print(set1 ^ set2)
 
 print(set1.intersection(set2))
 print(set2 & set1)
+
+COURSES = {
+    "Python Basics": {"Python", "functions", "variables",
+                    "booleans", "integers", "floats",
+                      "arrays", "strings", "exceptions",
+                      "conditions", "input", "loops"},
+    "Java Basics": {"Java", "strings", "variables",
+                    "input", "exceptions", "integers",
+                    "booleans", "loops"},
+    "PHP Basics": {"PHP", "variables", "conditions",
+                  "integers", "floats", "strings",
+                  "booleans", "HTML"},
+    "Ruby Basics": {"Ruby", "strings", "floats",
+                    "integers", "conditions",
+                    "functions", "input"}
+}
+
+
+def covers(topics):
+  courses = []
+  for key, value in COURSES.items():
+    if len(topics.intersection(value)) > 0:
+      courses.append(key)
+  return courses
+
+covers({"Python"})
+
+def covers_all(topics):
+  courses = []
+  for key, value in COURSES.items():
+    if len(topics.intersection(value)) == len(topics):
+      courses.append(key)
+  return courses
+
+covers_all({"conditions", "input"})
