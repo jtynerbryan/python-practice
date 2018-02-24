@@ -68,10 +68,29 @@ def draw_map(player):
                 output = tile.format('_|')
         print(output, end=line_end)
 
+def win(door, player):
+    if player == door:
+        return True
+    else:
+        return False
+
+def lose(monster, player):
+    if player == monster:
+        return True
+    else:
+        return False
+
+def play_again():
+    play_again = input("Would you like to play again? y/n ")
+    if play_again.upper() == "Y":
+        return True
+    else:
+        return False
+
 def game_loop():
     monster, door, player = get_locations()
-
     while True:
+        print(monster, door, player)
         draw_map(player)
         valid_moves = get_moves(player)
 
@@ -89,6 +108,19 @@ def game_loop():
         else:
             input("Walls are hard, don't run into them!")
         clear_screen()
+
+        if win(door, player):
+            print("You found the door out of the dungeon! YOU WIN")
+            break
+        elif lose(monster, player):
+            print("The monster got you! GAME OVER")
+            break
+
+    if play_again() == True:
+        game_loop()
+    else:
+        return
+
 
 
 clear_screen()
